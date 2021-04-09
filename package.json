@@ -28,7 +28,6 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://david.roncancio.me/blog",
   "browserslist": {
     "production": [
       ">0.2%",
