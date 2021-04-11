@@ -1,0 +1,12 @@
+[
+    {
+        "date":"04/11/2021",
+        "title":"React Markdown",
+        "summary":"How to store and present the blog posts"
+    },
+    {
+        "date":"04/09/2021",
+        "title":"Scaffolding",
+        "summary":"First Blog post, on this personal path to learn many things, starting with react"
+    }
+]
