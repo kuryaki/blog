@@ -10,8 +10,18 @@ function App() {
   const {
     loading,
     error,
-    data:scaffolding = []
-  } = useFetch('https://raw.githubusercontent.com/kuryaki/blog/master/public/posts/scaffolding.md', options, [])
+    data = []
+  } = useFetch('https://raw.githubusercontent.com/kuryaki/blog/master/public/posts/master.json', options, [])
+
+  const postPreviews = data.map((post:any) => {
+    return <div className="App-post-preview">
+      <a href={"/blog/" + post.slug}>
+        <h2>{post.title}</h2>
+      </a>
+      <p>{post.summary}</p>
+    </div>
+    ;
+  });
 
   return (
     <div className="App">
@@ -19,13 +29,7 @@ function App() {
       {loading && 'Loading...'}
       <h1>Blog</h1>
       <div className="App-content">
-        <div className="App-post-headline">
-          <a href="/blog/scaffolding">
-            <h2>Scaffolding</h2>
-          </a>
-          <p>{scaffolding}</p>
-          <ReactMarkdown>{scaffolding}</ReactMarkdown>
-        </div>
+        {postPreviews}
       </div>
       <header className="App-footer">
         <a
